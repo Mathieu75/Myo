@@ -1,0 +1,173 @@
+# Cela représentera nos Adherents :
+Adherent:
+  columns:
+    id_adherent:
+      type: integer
+      primary: true
+      autoincrement: true
+    nom:
+      type: string(25)
+    prenom:
+      type: string(25)
+    mail:
+      type: string(50)
+      notnull: true
+      unique: true
+    adresse:
+      type: string(50)
+    ville:
+      type: string(50)
+    mdp:
+      type: string(25)
+      notnull: true
+    droit:
+      type: string(25)
+      notnull: true
+#----------------------------------------------------------
+
+# Cela représentera nos Articles :
+Article:
+  columns:
+    id_article:
+      type: integer
+      primary: true
+      autoincrement: true
+    nom:
+      type: string(25)
+    description:
+      type: string
+    date_depos:
+      type: date
+    adresse:
+      type: string(50)
+    id_adherent:
+      type: integer
+  relations:
+    Adherent:
+      class: Adherent
+      local: id_adherent
+      foreign: id_adherent
+      alias: Adherent # Inutile, puisque l'alias par défaut est le nom de la classe.
+      foreignAlias: FK_Adherent_Article
+#----------------------------------------------------------
+
+# Cela représentera nos Famille_mots_cles :
+Famille_mots_cle:
+  columns:
+    id_famille:
+      type: integer
+      primary: true
+      autoincrement: true
+    designation:
+      type: string(25)
+#----------------------------------------------------------
+
+# Cela représentera nos Mots_cles :
+Mots_cle:
+  columns:
+    id_mot_cle:
+      type: integer
+      primary: true
+      autoincrement: true
+    designation:
+      type: string(25)
+    id_famille:
+      type: integer
+  relations:
+    Famille_mots_cle:
+      class: Famille_mots_cle
+      local: id_famille
+      foreign: id_famille
+      alias: Famille_mots_cle # Inutile, puisque l'alias par défaut est le nom de la classe.
+      foreignAlias: FK_Famille_mots_cle
+#----------------------------------------------------------
+
+# Cela représentera nos References :
+Reference:
+  columns:
+    id_reference:
+      type: integer
+      primary: true
+      autoincrement: true
+    id_mot_cle:
+      type: integer
+  relations:
+    Mots_cle:
+      class: Mots_cle
+      local: id_mot_cle
+      foreign: id_mot_cle
+      alias: Mots_cle # Inutile, puisque l'alias par défaut est le nom de la classe.
+      foreignAlias: FK_Mots_cle_Reference
+#----------------------------------------------------------
+
+# Cela représentera nos Reservations :
+Reservation:
+  columns:
+    id_reservation:
+      type: integer
+      primary: true
+      autoincrement: true
+    date_reservation:
+      type: date
+    date_debut:
+      type: date
+    date_rendu:
+      type: date
+    status:
+      type: string(25)
+    id_adherent:
+      type: integer
+    id_article:
+      type: integer
+  relations:
+    Adherent:
+      class: Adherent
+      local: id_adherent
+      foreign: id_adherent
+      alias: Adherent # Inutile, puisque l'alias par défaut est le nom de la classe.
+      foreignAlias: FK_Adherents_Reservation
+    Article:
+      class: Article
+      local: id_article
+      foreign: id_article
+      alias: Article # Inutile, puisque l'alias par défaut est le nom de la classe.
+      foreignAlias: FK_Articles_Reservation
+#----------------------------------------------------------
+
+# Cela représentera nos Ressources :
+Ressource:
+  columns:
+    id_ressource:
+      type: integer
+      primary: true
+      autoincrement: true
+    designation:
+      type: string(25)
+    id_type_ressource:
+      type: integer
+    id_article:
+      type: integer
+  relations:
+    Type_ressource:
+      class: Type_ressource
+      local: id_type_ressource
+      foreign: id_type_ressource
+      alias: Type_ressource # Inutile, puisque l'alias par défaut est le nom de la classe.
+      foreignAlias: FK_Type_ressource_Ressource
+    Article:
+      class: Article
+      local: id_article
+      foreign: id_article
+      alias: Article # Inutile, puisque l'alias par défaut est le nom de la classe.
+      foreignAlias: FK_Article_Ressource
+#----------------------------------------------------------
+
+# Cela représentera nos Type_ressources :
+Type_ressource:
+  columns:
+    id_type_ressource:
+      type: integer
+      primary: true
+      autoincrement: true
+    designation:
+      type: string(25)

@@ -1,30 +1,37 @@
 <?php
-include_once '../global.php'; 
-
-include_once WEB_DIR.'/v_menu.php';
-include_once WEB_DIR.'/v_bandeau.php';
+require_once(dirname(__FILE__)."/../config/global.php");
 //include WEB_DIR.'/v_menu.php';
-echo WEB_DIR;
-/* démarrer une session */
-session_start();
-echo '<br />Debut c_profil';
+$action ="";
+$action = $_GET['action'];
+$id = $_SESSION['id'];
+switch ($action) {
+	case 'create':
+		$adherent = new Adherent();
+		include_once 'vue/v_profil__form.php';
+	break;
+	case 'read':
+		$adherent = Doctrine_Core::getTable('Adherent')->find($id);
+		//var_dump($adherent);
+		include_once 'vue/v_profil_info.php';
 
-/* si variable de session email renseignée, ... */
+	break;
 
-/* on inclut le modèle du profil */
-//include '../modele/mprofil.php';
+	case 'modify':
+		$adherent = Doctrine_Core::getTable('Adherent')->find($id);
+		include_once 'vue/v_profil__form.php';
 
-// ici diverses actions contrôleur extraites du modèle
+	break;
+	case 'save':
+		$adherent = Doctrine_Core::getTable('Adherent')->find($_POST['id']);
+		$adherent->nom = $_POST['nom'];
+		$adherent->prenom = $_POST['prenom'];
+		$adherent->adresse = $_POST['adresse'];
+		$adherent->ville = $_POST['ville'];
+		$adherent->save(); "doSave()";
+		include_once 'vue/v_profil_info.php';
+	break;
+}
 
-/* on récupère le profil de l'utilisateur */
-/*************************
-$email = $_SESSION['email'];
-$profil = lire_profil($email);
-//**/
-$_SESSION['email'] = 'email_test';
-$email = $_SESSION['email'];
-$profil = lire_profil($email);
-/* on inclut la vue du profil et on affiche ce profil */
-include '../vue/v_profil.php';
+
 
 ?>

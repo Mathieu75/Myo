@@ -1,17 +1,22 @@
-<?php
-include_once '../global.php'; 
-echo '
+
 <head>
 <title></title>
-
+<script>
+message = history.forward();
+if(message = 'undefined'){
+	document.write( '<a href="javascript:history.forward()"><img  src="vue/img/btnNext2.png" /></a>' ); 
+}else{
+   message = "Il reste " + (window.history.length - 1);
+}
+</script>
 
 </head>
 <body>
-
-<a href="Header.php"><img  src="'.WEB_DIR.'/img/logo.png" /></a>
-<a href="Header.php"><img  src="'.WEB_DIR.'/img/btnHome.png" /></a>
-<a href="Header.php"><img  src="'.WEB_DIR.'/img/btnBefore.png" /></a>
-<a href="Header.php"><img  src="'.WEB_DIR.'/img/btnNext.png" /></a>
+"{%message}"
+<a href="v_bandeau.php"><img  src="vue/img/logo.png" /></a>
+<a href="v_bandeau.php"><img  src="vue/img/btnHome.png" /></a>
+<a href="javascript:history.back()"><img  src="vue/img/btnBefore.png" /></a>
+<a href="javascript:history.forward()"><img  src="vue/img/btnNext.png" /></a>
 
 <input type="text" name="recherche" />
 
@@ -19,4 +24,4 @@ echo '
 	<option value="01">MYO</option>
 	<option value="02">MINE</option>
 </select>
-<input type="submit" value="Rechercher" />';
+<input type="submit" value="Rechercher" />
