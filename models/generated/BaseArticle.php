@@ -11,9 +11,10 @@
  * @property date $date_depos
  * @property string $adresse
  * @property integer $id_adherent
+ * @property integer $id_ressource
  * @property Adherent $Adherent
+ * @property Ressource $Ressource
  * @property Doctrine_Collection $FK_Articles_Reservation
- * @property Doctrine_Collection $FK_Article_Ressource
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -47,6 +48,9 @@ abstract class BaseArticle extends Doctrine_Record
         $this->hasColumn('id_adherent', 'integer', null, array(
              'type' => 'integer',
              ));
+        $this->hasColumn('id_ressource', 'integer', null, array(
+             'type' => 'integer',
+             ));
     }
 
     public function setUp()
@@ -56,11 +60,11 @@ abstract class BaseArticle extends Doctrine_Record
              'local' => 'id_adherent',
              'foreign' => 'id_adherent'));
 
-        $this->hasMany('Reservation as FK_Articles_Reservation', array(
-             'local' => 'id_article',
-             'foreign' => 'id_article'));
+        $this->hasOne('Ressource', array(
+             'local' => 'id_ressource',
+             'foreign' => 'id_ressource'));
 
-        $this->hasMany('Ressource as FK_Article_Ressource', array(
+        $this->hasMany('Reservation as FK_Articles_Reservation', array(
              'local' => 'id_article',
              'foreign' => 'id_article'));
     }

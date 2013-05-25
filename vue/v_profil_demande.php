@@ -15,7 +15,7 @@
 foreach($reservations as $reservation):	
  echo '  <tr  onclick="alert(\'OK '.$reservation["id_reservation"].' \');">
     <td>'. $reservation->get('Article')['nom'].'</td>
-    <td>'. $reservation->get('Adherent')['prenom']." ".$reservation->get('Adherent')['nom'].'</td>
+    <td>'. $reservation->get('Article')->get('Adherent')['prenom']." ".$reservation->get('Article')->get('Adherent')['nom'].'</td>
     <td>'. $reservation->get('Article')['description'].'</td>
     <td>'. $reservation->get('Article')['adresse'].'</td>
     <td>'. $reservation['date_reservation'].'</td>

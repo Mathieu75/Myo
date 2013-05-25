@@ -1,3 +1,3 @@
 <div>
- <p> Pied de page accueil </p>
+ <p>  </p>
 </div>

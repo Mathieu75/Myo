@@ -18,7 +18,7 @@ switch ($action) {
 
 	case 'modify':
 		$adherent = Doctrine_Core::getTable('Adherent')->find($id);
-		include_once 'vue/v_profil__form.php';
+		include_once 'vue/v_profil_form.php';
 
 	break;
 	case 'save':

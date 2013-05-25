@@ -42,6 +42,8 @@ Article:
       type: string(50)
     id_adherent:
       type: integer
+    id_ressource:
+      type: integer
   relations:
     Adherent:
       class: Adherent
@@ -49,6 +51,12 @@ Article:
       foreign: id_adherent
       alias: Adherent # Inutile, puisque l'alias par défaut est le nom de la classe.
       foreignAlias: FK_Adherent_Article
+    Ressource:
+      class: Ressource
+      local: id_ressource
+      foreign: id_ressource
+      alias: Ressource # Inutile, puisque l'alias par défaut est le nom de la classe.
+      foreignAlias: FK_Ressource_Article
 #----------------------------------------------------------
 
 # Cela représentera nos Famille_mots_cles :
@@ -145,8 +153,6 @@ Ressource:
       type: string(25)
     id_type_ressource:
       type: integer
-    id_article:
-      type: integer
   relations:
     Type_ressource:
       class: Type_ressource
@@ -154,12 +160,7 @@ Ressource:
       foreign: id_type_ressource
       alias: Type_ressource # Inutile, puisque l'alias par défaut est le nom de la classe.
       foreignAlias: FK_Type_ressource_Ressource
-    Article:
-      class: Article
-      local: id_article
-      foreign: id_article
-      alias: Article # Inutile, puisque l'alias par défaut est le nom de la classe.
-      foreignAlias: FK_Article_Ressource
+   
 #----------------------------------------------------------
 
 # Cela représentera nos Type_ressources :

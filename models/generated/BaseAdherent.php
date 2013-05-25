@@ -39,10 +39,11 @@ abstract class BaseAdherent extends Doctrine_Record
              'type' => 'string',
              'length' => '25',
              ));
-        $this->hasColumn('mail', 'string', 25, array(
+        $this->hasColumn('mail', 'string', 50, array(
              'type' => 'string',
+             'notnull' => true,
              'unique' => true,
-             'length' => '25',
+             'length' => '50',
              ));
         $this->hasColumn('adresse', 'string', 50, array(
              'type' => 'string',

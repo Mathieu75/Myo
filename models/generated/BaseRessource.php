@@ -8,9 +8,8 @@
  * @property integer $id_ressource
  * @property string $designation
  * @property integer $id_type_ressource
- * @property integer $id_article
  * @property Type_ressource $Type_ressource
- * @property Article $Article
+ * @property Doctrine_Collection $FK_Ressource_Article
  * 
  * @package    ##PACKAGE##
  * @subpackage ##SUBPACKAGE##
@@ -34,9 +33,6 @@ abstract class BaseRessource extends Doctrine_Record
         $this->hasColumn('id_type_ressource', 'integer', null, array(
              'type' => 'integer',
              ));
-        $this->hasColumn('id_article', 'integer', null, array(
-             'type' => 'integer',
-             ));
     }
 
     public function setUp()
@@ -46,8 +42,8 @@ abstract class BaseRessource extends Doctrine_Record
              'local' => 'id_type_ressource',
              'foreign' => 'id_type_ressource'));
 
-        $this->hasOne('Article', array(
-             'local' => 'id_article',
-             'foreign' => 'id_article'));
+        $this->hasMany('Article as FK_Ressource_Article', array(
+             'local' => 'id_ressource',
+             'foreign' => 'id_ressource'));
     }
 }
