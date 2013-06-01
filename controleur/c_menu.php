@@ -35,7 +35,7 @@ switch ($action) {
 	break;
 	case 'contact':
 		$adherents = Doctrine_Core::getTable('Adherent')->findall();
-		include_once 'vue/v_contact.php';
+		include_once 'vue/v_contact_info.php';
 	break;
 }
 

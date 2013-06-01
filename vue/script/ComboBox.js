@@ -177,6 +177,7 @@ function ComboBox_build(arr)
     this.opslist = document.createElement("DIV")
     this.opslist.innerHTML=str;
     this.opslist.style.display='none';
+    this.opslist.style.position='absolute';
     this.opslist.className = "combo-list";
     this.opslist.onselectstart=returnFalse;
     this.view.appendChild(this.opslist);    
@@ -218,6 +219,7 @@ function ComboBox(arg)
     this.par      = arguments[1]||document.body
     this.view     = document.createElement("DIV");
     this.view.name = arg;
+    this.view.id = arg;
     /*this.view.style.position='absolute';
     */this.options  = new Array();
     this.expops   = new Array();
@@ -235,11 +237,9 @@ function ComboBox(arg)
     this.txtview = this.view.childNodes[0]
     this.valcon  = this.view.childNodes[1]
     
-    if (arguments.length>2) {
-        this.par.appendChild(this.view)
-    } else{
-        this.par.insertBefore(this.view,arguments[2])
-    }
+   
+    this.par.appendChild(this.view)
+   
 
     Global_combo_array[Global_combo_array.length]=this;
     if(Global_run_event_hook){ComboBox_init()}

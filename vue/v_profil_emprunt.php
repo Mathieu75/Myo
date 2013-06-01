@@ -17,7 +17,7 @@ foreach($reservations as $reservation):
     <td>'. $reservation->get('Article')['nom'].'</td>
     <td>'. $reservation->get('Adherent')['prenom']." ".$reservation->get('Adherent')['nom'].'</td>
     <td>'. $reservation->get('Article')['description'].'</td>
-    <td>'. $reservation->get('Article')['adresse'].'</td>
+    <td>'. $reservation->get('Adherent')['adresse'].'</td>
     <td>'. $reservation['date_reservation'].'</td>
     <td>'. $reservation['date_debut'].'</td>
     <td>'. $reservation['date_rendu'].'</td>

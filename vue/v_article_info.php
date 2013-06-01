@@ -1,6 +1,8 @@
  <?php 
 
- echo '<table>';
+ echo '
+<body>
+ <table>';
  foreach ($article->_data as $key => $value):
  	if ($key != 'id_adherent' && $key != 'id_article' ) {
 	
@@ -17,13 +19,14 @@
 			</tr>';
 		}
  	}
-   	endforeach;
-   	echo '
-   	<tr ;">
-   	<th ></th>
-	   <td align = \'right\' >
-		<input type="button" name="lien1" value="modifier"  
-		onclick="self.location.href=\'index.php?page=c_article&action=modify&id='.$article->_data['id_article'].' \'" 
-		</td>
-  	</tr>
-   	</table>';
+endforeach;
+echo '
+<tr ;">
+<th ></th>
+   <td align = \'right\' >
+	<input type="button" name="lien1" value="modifier"  
+	onclick="self.location.href=\'index.php?page=c_article&action=modify&id='.$article->_data['id_article'].' \'" 
+	</td>
+</tr>
+</table>
+</body>';

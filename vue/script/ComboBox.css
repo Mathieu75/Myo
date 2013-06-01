@@ -32,6 +32,7 @@
 .combo-input  {
 	border:			1px solid rgb(120,172,255) !important;
 	width:			138px !important;
+	margin-left:	2px;
 	vertical-align:	baseline;
 }
 
@@ -45,6 +46,7 @@
 	background:			white;
 	padding:			1px;
 	width:  			149px;
+	margin-left:	2px;
 	
 	/*******/
 	enable this if you want scroll bars
