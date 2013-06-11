@@ -38,8 +38,6 @@ Article:
       type: string
     date_depos:
       type: date
-    adresse:
-      type: string(50)
     id_adherent:
       type: integer
     id_ressource:

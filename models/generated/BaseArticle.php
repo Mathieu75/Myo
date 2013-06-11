@@ -9,7 +9,6 @@
  * @property string $nom
  * @property string $description
  * @property date $date_depos
- * @property string $adresse
  * @property integer $id_adherent
  * @property integer $id_ressource
  * @property Adherent $Adherent
@@ -40,10 +39,6 @@ abstract class BaseArticle extends Doctrine_Record
              ));
         $this->hasColumn('date_depos', 'date', null, array(
              'type' => 'date',
-             ));
-        $this->hasColumn('adresse', 'string', 50, array(
-             'type' => 'string',
-             'length' => '50',
              ));
         $this->hasColumn('id_adherent', 'integer', null, array(
              'type' => 'integer',
