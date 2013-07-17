@@ -18,10 +18,12 @@ foreach($articles as $article):
     <td>'.$article->get('Adherent')["adresse"].'</td>
     <td>'.$article["date_depos"].'</td>
     <td>';
-    if ($article['id_adherent']==$_SESSION['id']) {
-      echo '   <a href="index.php?page=c_article&action=read&amp;id='.$article["id_article"].'">voir</a>';
-    }else {
-      echo '   <a href="index.php?page=c_reservation&action=create&amp;id='.$article["id_article"].'">Emprunter</a>';
+    if(!empty($_SESSION['id'])){
+      if ($article['id_adherent']==$_SESSION['id']) {
+        echo '   <a href="index.php?page=c_article&action=read&amp;id='.$article["id_article"].'">voir</a>';
+      }else {
+        echo '   <a href="index.php?page=c_reservation&action=create&amp;id='.$article["id_article"].'">Emprunter</a>';
+      }
     }
     echo ' 
     </td>

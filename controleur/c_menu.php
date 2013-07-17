@@ -17,6 +17,7 @@ switch ($action) {
               ->leftJoin('r.Article a')
               ->where('a.id_adherent= ?',$id_adherent)
               ->execute();
+   		$reservations = Doctrine_Core::getTable('Reservation')->findByArticle(array('Adherent' => $id_adherent));
 
 		include_once 'vue/v_profil_emprunt.php';
 	break;

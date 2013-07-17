@@ -9,9 +9,9 @@
  }else{?>
   <section class = "SectionGauche">
 
-  <h2>Création d'un adherent</h2>
+  <h2>Devenir adherent</h2>
 
-  <form action="index.php" method="post">
+  <form action="index.php?page=c_profil&action=submit" method="post">'
  <?php 
 }
  ?>

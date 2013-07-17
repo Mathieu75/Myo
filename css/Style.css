@@ -53,8 +53,7 @@ header .button {
 .bandeauDroite{
 	display: inline-block;
 	vertical-align: middle;
-	position:absolute;
-	left: 900px;
+	float: right;
 }
 .bandeauTable{
 	width: 600px;

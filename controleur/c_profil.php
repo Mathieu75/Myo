@@ -43,7 +43,7 @@ switch ($action) {
 		$adherent->mail = $_POST['mail'];
 		$adherent->adresse = $_POST['adresse'];
 		$adherent->ville = $_POST['ville'];
-		$adherent->password = $_POST['mdp'];
+		$adherent->mdp = $_POST['password'];
 		$adherent->droit = 0;
 
 		$adherent->save(); "doSave()";

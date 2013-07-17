@@ -11,11 +11,17 @@ switch ($action) {
 
 		include_once 'vue/v_reservation_form.php';
 	break;
-	case 'read':
-		echo "not yet implemented";
+	case 'accept':
+		$reservation = Doctrine_Core::getTable('Reservation')->find($id);
+		$reservation->status= 'ACCEPT';
+		$reservation->save();
+		include_once 'vue/v_profil_demande.php';
 	break;
-	case 'modify':
-		echo "not yet implemented";
+	case 'refuse':
+		$reservation = Doctrine_Core::getTable('Reservation')->find($id);
+		$reservation->status= 'ANNULER';
+		$reservation->save();
+		include_once 'vue/v_profil_demande.php';
 	break;
 	case 'delete':
 		echo "not yet implemented";

@@ -23,8 +23,8 @@ foreach($reservations as $reservation):
     <td>'. $reservation['date_rendu'].'</td>
     <td>'. $reservation['status'].'</td>
     <td>
-     <a href="index?page=c_profil&action=accept&id='.$reservation["id_reservation"].'">Accepter</a>
-     <a href="index?page=c_profil&action=refuse&id='.$reservation["id_reservation"].'">Refuser</a>
+     <a href="index?page=c_reservation&action=accept&id='.$reservation["id_reservation"].'">Accepter</a>
+     <a href="index?page=c_reservation&action=refuse&id='.$reservation["id_reservation"].'">Refuser</a>
     </td>
    </tr>';
    endforeach;

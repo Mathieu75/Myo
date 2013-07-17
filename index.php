@@ -23,8 +23,10 @@
 <?php
 require_once("config/global.php");
 include_once('vue/v_index_bandeau.php');
-include_once('vue/v_index_menu.php');
-session_start();
+  session_start();
+if (!empty($_SESSION['id'])) {
+   include_once('vue/v_index_menu.php');
+}
 
 echo '<section>';
 if (!empty($_GET['page'])) {

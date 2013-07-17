@@ -24,10 +24,11 @@
    <td><input type="text" name="comboRessourcetxt" value="<?php echo $article->get('Ressource')['designation'] ?>" /></td>
     <td>
       <select name="comboRessource">
+          <option value="'.$value.'"></option>
       <?php 
             foreach ($ressourceList as $value) {
               echo '
-          <option value="'.$value.'">'.$value["designation"].'</option>
+          <option value="'.$value["designation"].'">'.$value["designation"].'</option>
               ';
       }
       ?>

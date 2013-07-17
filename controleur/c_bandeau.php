@@ -10,6 +10,8 @@ switch ($action) {
   		header('Location: index.php'); 
 	break;
 	case 'recherche':
+		if(!empty($_SESSION['id'])){
+
 		$recherche = "%".$_POST['recherche']."%";
 		$articles = Doctrine_Query::create()
               ->select('a.*')
@@ -17,6 +19,9 @@ switch ($action) {
               ->where('a.description like ?',$recherche)
               ->orWhere('a.nom like ?',$recherche)
               ->execute();
+          }else{
+          	$articles = array(new Article());
+          }
 		include_once 'vue/v_myo_bibliotheque.php'; 
 	break;
 }
