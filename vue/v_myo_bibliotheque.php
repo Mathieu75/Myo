@@ -1,6 +1,7 @@
+<section>
 <?php 
  
- echo '<table>
+ echo '<table class="table table-striped table-hover">
   <tr align = "left">
    <th>Nom</th>
    <th>Description</th>
@@ -26,4 +27,9 @@ foreach($articles as $article):
     </td>
    </tr>';
    endforeach;
- echo '</table>';
+ echo '
+
+ </table>
+</section>
+
+ ';

@@ -49,7 +49,6 @@ function ComboBox_make()
     var tmp = document.createElement("BUTTON");
     tmp.appendChild(document.createTextNode(6));
     tmp.className = "combo-button";
-    tmp.type="button";
     
 	this.view.appendChild(tmp);
    	tmp.onfocus = function () { this.blur(); };
@@ -177,7 +176,6 @@ function ComboBox_build(arr)
     this.opslist = document.createElement("DIV")
     this.opslist.innerHTML=str;
     this.opslist.style.display='none';
-    this.opslist.style.position='absolute';
     this.opslist.className = "combo-list";
     this.opslist.onselectstart=returnFalse;
     this.view.appendChild(this.opslist);    
@@ -208,7 +206,7 @@ function ComboBox_toggle()
     }
 }
 
-function ComboBox(arg)
+function ComboBox()
 {
     if(arguments.length==0)
     {
@@ -218,10 +216,8 @@ function ComboBox(arg)
     this.name     = arguments[0];
     this.par      = arguments[1]||document.body
     this.view     = document.createElement("DIV");
-    this.view.name = arg;
-    this.view.id = arg;
-    /*this.view.style.position='absolute';
-    */this.options  = new Array();
+    this.view.style.position='absolute';
+    this.options  = new Array();
     this.expops   = new Array();
     this.value    = ""
 
@@ -237,9 +233,7 @@ function ComboBox(arg)
     this.txtview = this.view.childNodes[0]
     this.valcon  = this.view.childNodes[1]
     
-   
     this.par.appendChild(this.view)
-   
 
     Global_combo_array[Global_combo_array.length]=this;
     if(Global_run_event_hook){ComboBox_init()}
@@ -269,4 +263,4 @@ function ComboBoxItem(text,value)
     this.value = value;
 }
 
-document.write('<link rel="STYLESHEET" type="text/css" href="vue/script/ComboBox.css">')
+document.write('<link rel="STYLESHEET" type="text/css" href="ComboBox.css">')

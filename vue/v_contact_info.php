@@ -1,8 +1,9 @@
 <?php 
-echo '<table>
+echo '<table class="table table-striped table-hover">
   <tr align = "left">
    <th>Nom</th>
    <th>Prenom</th>
+   <th>Mail</th>
    <th>Adresse</th>
    <th>Ville</th>
    <th>Action</th>
@@ -11,6 +12,7 @@ foreach($adherents as $adherent):
  echo '  <tr  onclick="alert(\'OK '.$adherent["id_adherent"].' \');">
     <td>'. $adherent["nom"].'</td>
     <td>'.$adherent["prenom"].'</td>
+    <td>'.$adherent["mail"].'</td>
     <td>'.$adherent["adresse"].'</td>
     <td>'.$adherent["ville"].'</td>
     <td>

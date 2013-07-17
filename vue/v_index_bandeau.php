@@ -1,19 +1,28 @@
+<header >
+		<div>
+			<input type="image" src="vue/img/baniere.png">
+		</div>
 
-<head>
-<title></title>
+		<div class = "bandeauGauche">
+			<a  href="index.php"><img  src="vue/img/my_logo.png" /></a>
+			<a href="index.php"><img  src="vue/img/Home-Button.png" /></a>
+		</div>
+		<div class = "bandeauDroite">
+			<form class = "bandeauform" action="index.php?page=c_bandeau&action=recherche" method="post">
+				<table class = "bandeauTable">
+					<tr>
+						<td>
+							<input type="text" name="recherche"/>
+							<input type="submit" value="Rechercher" class = "UpdateButton"/>
+						</td>
+						<td align= "right">
+							<input type="button" value="Deconnecter" onclick="self.location.href=' index.php?page=c_bandeau&action=logout '" class = "DeleteButon">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
 
 
-</head>
-<body>
-<a href="v_bandeau.php"><img  src="vue/img/logo.png" /></a>
-<a href="v_bandeau.php"><img  src="vue/img/btnHome.png" /></a>
-<a href="javascript:history.go(-1)"><img  src="vue/img/btnBefore.png" /></a>
-<a href="javascript:history.forward()"><img  src="vue/img/btnNext.png" /></a>
+</header>
 
-<input type="text" name="recherche" />
-
-<select name="choix">
-	<option value="01">MYO</option>
-	<option value="02">MINE</option>
-</select>
-<input type="submit" value="Rechercher" />

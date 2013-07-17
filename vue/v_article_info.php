@@ -2,7 +2,7 @@
 
  echo '
 <body>
- <table>';
+ <table class = "table">';
  foreach ($article->_data as $key => $value):
  	if ($key != 'id_adherent' && $key != 'id_article' ) {
 	
@@ -21,12 +21,13 @@
  	}
 endforeach;
 echo '
-<tr ;">
-<th ></th>
+<tr>
    <td align = \'right\' >
 	<input type="button" name="lien1" value="modifier"  
 	onclick="self.location.href=\'index.php?page=c_article&action=modify&id='.$article->_data['id_article'].' \'" 
+	class = "UpdateButton">
 	</td>
+<th ></th>
 </tr>
 </table>
 </body>';

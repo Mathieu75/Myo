@@ -9,7 +9,6 @@ switch ($action) {
 		$article = new Article();
 		$article['date_depos']=date("Y-m-d");
 		$article['id_adherent']=$id_adherent;
-		echo $article['date_depos'];
 		$ressourceList = Doctrine_Query::create()
               ->select('r.*')
               ->from('Ressource r')
@@ -55,7 +54,7 @@ switch ($action) {
         	$ressource = new Ressource();
         	$ressource['designation']=$comboRessource;
         	$ressource['id_type_ressource']=$_POST['id_type'];
-        	$ressource->save();
+        	//$ressource->save();
         }else{
         	$ressource = $ressourceList[0];
         }
@@ -72,7 +71,7 @@ switch ($action) {
 		$article->date_depos = $_POST['date_depos'];
 		$article->id_ressource= $ressource->id_ressource;
 		$article->id_adherent= $id_adherent;
-		$article->save();
+		//$article->save();
 		//$url ="index.php?page=c_menu&action=profil_bibliotheque";
 		//header('Location: '.$url);
 		?>

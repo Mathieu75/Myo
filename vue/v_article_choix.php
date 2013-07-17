@@ -1,4 +1,4 @@
-<body>
+<article>
  <?php 
 
  echo '
@@ -17,5 +17,5 @@
 endforeach;
 echo '
 </table>
-</body>';
+</article>';
 

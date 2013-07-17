@@ -48,8 +48,8 @@
 	width:  			149px;
 	margin-left:	2px;
 	
+	/*enable this if you want scroll bars*/
 	/*******/
-	enable this if you want scroll bars
 	height:				200px;
 	overflow:			auto;
 	overflow-x:			visible;

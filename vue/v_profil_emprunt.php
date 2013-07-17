@@ -1,6 +1,6 @@
  <?php 
 
- echo '<table border=true>
+ echo '<table class="table table-striped table-hover">
   <tr align = "left">
    <th>Ressource</th>
    <th>Demandeur</th>

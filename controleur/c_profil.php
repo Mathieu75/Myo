@@ -25,10 +25,47 @@ switch ($action) {
 		$adherent = Doctrine_Core::getTable('Adherent')->find($_POST['id']);
 		$adherent->nom = $_POST['nom'];
 		$adherent->prenom = $_POST['prenom'];
+		$adherent->mail = $_POST['mail'];
 		$adherent->adresse = $_POST['adresse'];
 		$adherent->ville = $_POST['ville'];
-		$adherent->save(); "doSave()";
+
+  		$adherent->save(); "doSave()";
+		
+		$_SESSION['nom'] = $adherent['nom'];
+		$_SESSION['prenom'] = $adherent['prenom'];
+		
 		include_once 'vue/v_profil_info.php';
+	break;
+	case 'submit':
+		$adherent = new Adherent();
+		$adherent->nom = $_POST['nom'];
+		$adherent->prenom = $_POST['prenom'];
+		$adherent->mail = $_POST['mail'];
+		$adherent->adresse = $_POST['adresse'];
+		$adherent->ville = $_POST['ville'];
+		$adherent->password = $_POST['mdp'];
+		$adherent->droit = 0;
+
+		$adherent->save(); "doSave()";
+
+		$_SESSION['id'] = $adherent['id_adherent'];
+		$_SESSION['droit'] = $adherent['droit'];
+		$_SESSION['nom'] = $adherent['nom'];
+		$_SESSION['prenom'] = $adherent['prenom'];
+  		header('Location: index.php'); 
+	break;
+	case 'login':
+		$q = Doctrine_Query::create()
+              ->from('Adherent a')
+              ->where('a.nom = ?',$_POST['nom'])
+              ->andWhere('a.mdp = ?',$_POST['password']);
+		$adherents = $q->fetchArray();
+
+		$_SESSION['id'] = $adherents[0]['id_adherent'];
+		$_SESSION['droit'] = $adherents[0]['droit'];
+		$_SESSION['nom'] = $adherents[0]['nom'];
+		$_SESSION['prenom'] = $adherents[0]['prenom'];
+  		header('Location: index.php'); 
 	break;
 }
 

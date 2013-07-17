@@ -1,0 +1,196 @@
+#main{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200;
+}	
+
+header{
+	background-color:rgb(150,220,255);
+}
+header  input[type="text"]{
+margin-bottom: 5px;
+margin-top: 5px;
+}
+
+nav{
+	display: inline-block;
+	vertical-align: top;
+
+}
+
+nav ul{
+	list-style-type: none;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-padding-start: 0px;
+}
+
+header .button {
+	-moz-box-shadow: 0px 1px 0px 0px #97c4fe;
+	-webkit-box-shadow: 0px 1px 0px 0px #97c4fe;
+	box-shadow: 0px 1px 0px 0px #97c4fe;
+	background-color:#3d94f6;
+	border:1px solid #337fed;
+	display:inline-block;
+	color:#ffffff;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #1570cd;
+}.button:hover {
+	background-color:#1e62d0;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+
+.bandeauGauche{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.bandeauDroite{
+	display: inline-block;
+	vertical-align: middle;
+	position:absolute;
+	left: 900px;
+}
+.bandeauTable{
+	width: 600px;
+}
+
+.mybibliothequeButton {
+	position: absolute;
+	width: 520px;
+	-moz-box-shadow: 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow: 0px 1px 0px 0px #bbdaf7;
+	box-shadow: 0px 1px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+	background-color:#79bbff;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+}.mybibliothequeButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+	background-color:#378de5;
+}.mybibliothequeButton:active {
+	position:relative;
+	top:1px;
+}.mybibliothequeButton table{
+	padding: 0;
+	border-spacing: 0;
+	width: 100%;
+}
+
+.myoButton {
+	position: absolute;
+	margin-left: 520px;
+	width: 520px;
+	-moz-box-shadow: 0px 1px 0px 0px #f9eca0;
+	-webkit-box-shadow: 0px 1px 0px 0px #f9eca0;
+	box-shadow: 0px 1px 0px 0px #f9eca0;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f0c911), color-stop(1, #f2ab1e) );
+	background:-moz-linear-gradient( center top, #f0c911 5%, #f2ab1e 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e');
+	background-color:#f0c911;
+	display:inline-block;
+	color:#fcfcfc;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	text-decoration:none;
+}.myoButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f2ab1e), color-stop(1, #f0c911) );
+	background:-moz-linear-gradient( center top, #f2ab1e 5%, #f0c911 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2ab1e', endColorstr='#f0c911');
+	background-color:#f2ab1e;
+}.myoButton:active {
+	position:relative;
+	top:1px;
+}.myoButton table{
+	padding: 0;
+	border-spacing: 0;
+	width: 100%;
+}
+
+.bandeauform{
+ margin: 0px;
+ padding: 0px;
+}
+
+
+section button {
+padding: 0 0;
+border: 0;
+}
+section td {
+padding: 0 0;
+}
+section img {
+padding: 0 0;
+border-spacing: 0;
+}
+
+.SectionGauche{
+	display:inline-block;
+	position: absolute;
+	width: 520;
+}
+
+.SectionDroite{
+	display:inline-block;
+	position: absolute;
+	margin-left: 520px;
+	width: 520px;
+}
+
+.UpdateButton {
+	-moz-box-shadow: 0px 1px 0px 0px #a4e271;
+	-webkit-box-shadow: 0px 1px 0px 0px #a4e271;
+	box-shadow: 0px 1px 0px 0px #a4e271;
+	background-color:#89c403;
+	border:1px solid #74b807;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:4px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528009;
+	margin-top: -2px;
+}.UpdateButton:hover {
+	background-color:#77a809;
+}.UpdateButton:active {
+	position:relative;
+	top:1px;
+}
+.DeleteButon {
+	-moz-box-shadow: 0px 1px 0px 0px #f29c93;
+	-webkit-box-shadow: 0px 1px 0px 0px #f29c93;
+	box-shadow: 0px 1px 0px 0px #f29c93;
+	background-color:#fe1a00;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:4px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #b23e35;
+	margin-top: -2px;
+}.classname:hover {
+	background-color:#ce0100;
+}.classname:active {
+	position:relative;
+	top:1px;
+}

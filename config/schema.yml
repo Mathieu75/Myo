@@ -158,7 +158,6 @@ Ressource:
       foreign: id_type_ressource
       alias: Type_ressource # Inutile, puisque l'alias par défaut est le nom de la classe.
       foreignAlias: FK_Type_ressource_Ressource
-   
 #----------------------------------------------------------
 
 # Cela représentera nos Type_ressources :

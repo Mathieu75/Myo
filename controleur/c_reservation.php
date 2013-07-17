@@ -21,7 +21,6 @@ switch ($action) {
 		echo "not yet implemented";
 	break;
 	case 'save':
-		echo "not yet implemented";
 		$reservation = new Reservation();
 		$reservation->date_reservation = date("Y-m-d");
 		$reservation->date_debut =  $_POST['date_debut'];

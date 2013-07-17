@@ -1,0 +1,25 @@
+header{
+	background-color:rgb(100,240,255);
+	position : absolute;
+	left : 0;
+	height : 220;
+	top: 0;
+	width: 100%;
+}
+
+nav{
+	background-color:rgb(50,150,255);
+	position : absolute;
+	width: 190;
+	left : 0;
+	top : 220;
+	height : 100%;
+}
+
+section{
+	background-color:rgb(250,150,255);	
+	position : absolute;
+	left: 190;
+	top : 220;
+	height: 100%;
+}

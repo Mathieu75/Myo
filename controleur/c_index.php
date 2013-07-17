@@ -1,9 +1,9 @@
 <?php
-include_once('action.php'); 
-include_once('action_controller.php'); ?>
-<html>
-<head><title>Index</title></head>
 
-<body><?php action(); ?></body>
+if (!empty($_SESSION['id'] )) {
+	include_once('vue/v_index_accueil.php');
 
-</html>
+}else{
+	$adherent = new Adherent();
+	include_once('vue/v_index_form.php');
+}

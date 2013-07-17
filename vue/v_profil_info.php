@@ -2,7 +2,7 @@
 
  //var_dump($adherent->_data);
 
- echo '<table>';
+ echo '<table class = "table">';
  foreach ($adherent->_data as $key => $value):
  	if ($key != 'id_adherent' &&$key != 'droit' ) {
 	echo '
@@ -14,11 +14,11 @@
 endforeach;
 echo '
 <tr>
-<th ></th>
-	<td align = "right">
-		<input type="button" name="lien1" value="modifier"  
+	<td >
+		<input type="button" name="lien1" value="Modifier"  
 		onclick="self.location.href=\' index.php?page=c_profil&action=modify \'" 
-		style="background-color:#3cb371" style="color:white; font-weight:bold"onclick>
+		class = "UpdateButton">
 	</td>
+	<td></td>
 </tr>
 </table>';
