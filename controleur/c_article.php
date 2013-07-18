@@ -31,7 +31,14 @@ switch ($action) {
 		include_once 'vue/v_article_form.php';
 	break;
 	case 'delete':
-		echo "not yet implemented";
+		$article = Doctrine_Core::getTable('Article')->find($id);
+		$reservations = Doctrine_Core::getTable('Reservation')->findByArticle($article['id_article']);
+   		foreach ($reservations as $reservation) {
+	   		$reservation->delete();
+   		}
+   		$article->delete();
+		$url ="index.php?page=c_menu&action=profil_bibliotheque";
+		header('Location: '.$url);
 	break;
 	case 'save':
 		if($_POST['comboRessource'] != ''){
@@ -39,15 +46,17 @@ switch ($action) {
 		}else{
 			$comboRessource = $_POST['comboRessource'] ;
 		}
-		$ressourceList =Doctrine_Core::getTable('Ressource')->findByDesignation($comboRessource);
-        if (count($ressourceList) == 0 and $comboRessource != "") {
+		$ressource =Doctrine_Core::getTable('Ressource')->findOneByDesignation($comboRessource);
+
+        var_dump($ressource);
+        echo $ressource;
+        if ($ressource == "") {
         	$ressource = new Ressource();
         	$ressource['designation']=$comboRessource;
         	$ressource['id_type_ressource']=$_POST['id_type'];
         	$ressource->save();
-        }else{
-        	$ressource = $ressourceList[0];
         }
+        var_dump($ressource);
 
 		if ($_POST['id_article'] !="") {
 			$article = Doctrine_Core::getTable('Article')->find($_POST['id_article']);

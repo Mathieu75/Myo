@@ -11,8 +11,8 @@ echo '
 		<div>
 			<ul>
 				<li><a href="index.php?page=c_menu&action=profil_bibliotheque">Bibliotheque</a>
-				<li><a href="index.php?page=c_menu&action=profil_emprunt">Emprunts</a>
-				<li><a href="index.php?page=c_menu&action=profil_demande">Mes demandes</a>
+				<li><a href="index.php?page=c_menu&action=profil_emprunt">Je prête</a>
+				<li><a href="index.php?page=c_menu&action=profil_demande">J\'emprunts</a>
 			</ul>
 		</div>
 	<h3 class = "ui-state-disabled"><a href="index.php?page=c_menu&action=contact">Contact</a></h3>

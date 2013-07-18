@@ -24,7 +24,10 @@ switch ($action) {
 		include_once 'vue/v_profil_demande.php';
 	break;
 	case 'delete':
-		echo "not yet implemented";
+		$reservation = Doctrine_Core::getTable('Reservation')->find($id);
+		$reservation->delete();
+		//$url ="index.php?page=c_menu&action=profil_bibliotheque";
+		//header('Location: '.$url);
 	break;
 	case 'save':
 		$reservation = new Reservation();
